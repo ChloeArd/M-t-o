@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Météo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="container">
+        <div id="logoimg">
+            <img src="https://cdn.discordapp.com/attachments/689017273050202134/797498087098155038/unknown.png" alt="logoMeteo">
+        </div>
+        <div id="temps">
+            <h1 id="state"></h1>
+            <p id="date"></p>
+            <img id="imageTemps" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/271/sun_2600-fe0f.png">
+            <p id="typeTemps"></p>
+            <p id="temperature"></p>
+            <div class="row">
+                <p id="tempsMax">Max: </p>
+                <p id="tempsMin">Min: </p>
+            </div>
+            <div id="autreInfos">
+                <div class="traits"></div>
+                <div class="row">
+                    <p id="sunrise">Lever du soleil: </p>
+                    <p id="sunset">Coucher du soleil: </p>
+                </div>
+                <div class="traits"></div>
+                <div class="row">
+                    <p id="humidity">Humidité: </p>
+                    <p id="windSpeed">Vent: </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
