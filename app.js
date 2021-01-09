@@ -1,5 +1,5 @@
-const URL = "https://api.openweathermap.org/data/2.5/weather?q=anor&units=metric&lang=fr&appid=f5c382e18131ee20c243227653a7d50c";// API pour Anor, metric = celcius
-console.log(URL);
+let URL = "https://api.openweathermap.org/data/2.5/weather?q=london&units=metric&lang=fr&appid=f5c382e18131ee20c243227653a7d50c";// API pour Anor, metric = celcius, temps actuelles
+console.log(URL)
 
 let xhr = new XMLHttpRequest();
 xhr.open("GET", URL);
@@ -10,19 +10,39 @@ xhr.onload = function () {
         alert("Une erreur est survenue");
         return;
     }
-
     let response = xhr.response;
-    document.getElementById("state").innerHTML = response.name;
-    document.getElementById("date").innerHTML = new Date().toLocaleDateString();
-    document.getElementById("typeTemps").innerHTML = response.weather[0].description;
-    document.getElementById("temperature").innerHTML = Math.round(response.main.temp) + "°";
-    document.getElementById("tempsMax").innerHTML += Math.round(response.main.temp_max) + "°";
-    document.getElementById("tempsMin").innerHTML += Math.round(response.main.temp_min) + "°";
-    document.getElementById("humidity").innerHTML += response.main.humidity + " %";
-    document.getElementById("windSpeed").innerHTML += response.wind.speed + " m/s";
+        document.getElementById("state").innerHTML = response.name + ", " + response.sys.country;
+        document.getElementById("date").innerHTML = new Date().toLocaleDateString();
+        document.getElementById("typeTemps").innerHTML = response.weather[0].description;
+        document.getElementById("temperature").innerHTML = Math.round(response.main.temp) + "°";
+        document.getElementById("tempsMax").innerHTML += Math.round(response.main.temp_max) + "°";
+        document.getElementById("tempsMin").innerHTML += Math.round(response.main.temp_min) + "°";
+        document.getElementById("humidity").innerHTML += response.main.humidity + " %";
+        document.getElementById("windSpeed").innerHTML += response.wind.speed + " m/s";
 
+
+        if (response.weather[0].main === "Cloudy"){ //clair
+            document.getElementById("imageTemps").src = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/271/sun-behind-cloud_26c5.png";
+        }
+        if(response.weather[0].main === "Clouds"){ //nuages
+            document.getElementById("imageTemps").src = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/271/cloud_2601-fe0f.png";
+        }
+        if (response.weather[0].main === "Fog" ) { //brouillard
+            document.getElementById("imageTemps").src = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/271/fog_1f32b-fe0f.png";
+        }
+        if(response.weather[0].main === "Rain"){
+            document.getElementById("imageTemps").src = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/271/cloud-with-rain_1f327-fe0f.png";
+        }
+        if (response.weather[0].main === "Clear"){
+            document.getElementById("imageTemps").src = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/271/sun_2600-fe0f.png";
+        }
+        if (response.weather[0].description === "Snowy"){
+            document.getElementById("imageTemps").src = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/271/cloud-with-snow_1f328-fe0f.png";
+        }
+        if (response.weather[0].description === "Sotrmy"){
+            document.getElementById("imageTemps").src = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/271/cloud-with-lightning_1f329-fe0f.png";
+        }
 }
 
 xhr.send();
 console.log(xhr);
-

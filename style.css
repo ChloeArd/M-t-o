@@ -34,6 +34,21 @@ body {
     color: white;
 }
 
+#inputState{
+    margin-top: 10px;
+    margin-bottom: 5px;
+    border-radius: 20px 20px;
+    font-size: 30px;
+    text-align: center;
+}
+
+#enter{
+    background-color: #DF8E00;
+    border-radius: 20px 20px;
+    color: white;
+    padding: 5px;
+}
+
 h1{
     font-size: 45px;
 }
