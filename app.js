@@ -1,5 +1,4 @@
 let URL = "https://api.openweathermap.org/data/2.5/weather?q=london&units=metric&lang=fr&appid=f5c382e18131ee20c243227653a7d50c";// API pour Anor, metric = celcius, temps actuelles
-console.log(URL)
 
 let xhr = new XMLHttpRequest();
 xhr.open("GET", URL);
@@ -19,7 +18,6 @@ xhr.onload = function () {
         document.getElementById("tempsMin").innerHTML += Math.round(response.main.temp_min) + "°";
         document.getElementById("humidity").innerHTML += response.main.humidity + " %";
         document.getElementById("windSpeed").innerHTML += response.wind.speed + " m/s";
-
 
         if (response.weather[0].main === "Cloudy"){ //clair
             document.getElementById("imageTemps").src = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/271/sun-behind-cloud_26c5.png";
