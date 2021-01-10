@@ -34,21 +34,6 @@ body {
     color: white;
 }
 
-#inputState{
-    margin-top: 10px;
-    margin-bottom: 5px;
-    border-radius: 20px 20px;
-    font-size: 30px;
-    text-align: center;
-}
-
-#enter{
-    background-color: #DF8E00;
-    border-radius: 20px 20px;
-    color: white;
-    padding: 5px;
-}
-
 h1{
     font-size: 45px;
 }
@@ -73,8 +58,30 @@ h1{
     margin-bottom: 5px;
 }
 
+.traits2{
+    border-left: 2px solid white;
+    margin-right: 5px;
+    margin-left: 5px;
+    height: 200px;
+}
+
+#previsions{
+    display: flex;
+    flex-direction: row;
+}
+
+#jour1, #jour2, #jour3, #jour4{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 #autreInfos{
     margin-top: 30px;
+}
+
+#imageTemps1, #imageTemps2, #imageTemps3, #imageTemps4{
+    width: 50px;
 }
 
 @media screen and (max-width: 1000px) {
@@ -83,11 +90,30 @@ h1{
     }
 }
 
-@media screen and (max-width: 440px) {
-    #inputState{
-        font-size: 20px;
-    }
+@media screen and (max-width: 600px) {
     .row{
         font-size: 20px;
+    }
+    #previsions{
+        flex-direction: column;
+    }
+    #jour1, #jour2, #jour3, #jour4{
+        flex-direction: row;
+    }
+    .traits2{
+        border-top: 2px solid white;
+        height: 0;
+        width: 100%;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #jour1, #jour2, #jour3, #jour4{
+        font-size: 20px;
+    }
+    #imageTemps1, #imageTemps2, #imageTemps3, #imageTemps4{
+        width: 25px;
     }
 }
