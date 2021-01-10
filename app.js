@@ -47,7 +47,7 @@ xhr2.responseType = "json";
 
 xhr2.onload = function () {
     //jour 1 --> demain
-    jours("date1", "tempsMax1", "tempsMin1", 1,0);
+    jours("date1", "tempsMax1", "tempsMin1", 1, 0);
     imageTemps(0, "imageTemps1");
 
     //Jour 2
@@ -59,7 +59,7 @@ xhr2.onload = function () {
     imageTemps(2, "imageTemps3");
 
     //Jour 4
-    jours("date4", "tempsMax4", "tempsMin4", 4,3)
+    jours("date4", "tempsMax4", "tempsMin4", 4, 3)
     imageTemps(3, "imageTemps4");
 }
 
