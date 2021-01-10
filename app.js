@@ -5,10 +5,6 @@ xhr.open("GET", URL);
 xhr.responseType = "json";
 
 xhr.onload = function () {
-    if (xhr.status !== 200) {
-        alert("Une erreur est survenue");
-        return;
-    }
     let response = xhr.response;
         document.getElementById("state").innerHTML = response.name + ", " + response.sys.country;
         document.getElementById("date").innerHTML = new Date().toLocaleDateString();
@@ -51,10 +47,6 @@ xhr2.open("GET", URL2);
 xhr2.responseType = "json";
 
 xhr2.onload = function () {
-    if (xhr2.status !== 200) {
-        alert("Une erreur est survenue");
-        return;
-    }
     let response = xhr2.response;
     let aujourdhui = new Date();
     //Jour1 -> Lendemain
