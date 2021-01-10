@@ -4,39 +4,6 @@ let xhr = new XMLHttpRequest();
 xhr.open("GET", URL);
 xhr.responseType = "json";
 
-function imageTemps(i, id){
-    let response = xhr2.response;
-    if (response.daily[i].weather[0].main === "Cloudy"){ //soleil avec nuage
-        document.getElementById(id).src = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/271/sun-behind-cloud_26c5.png";
-    }
-    else if(response.daily[i].weather[0].main === "Clouds"){ //nuages
-        document.getElementById(id).src = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/271/cloud_2601-fe0f.png";
-    }
-    else if (response.daily[i].weather[0].main === "Fog" || response.daily[i].weather[0].main === "Haze" || response.daily[i].weather[0].main === "Mist") { //brouillard et brume
-        document.getElementById(id).src = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/271/fog_1f32b-fe0f.png";
-    }
-    else if(response.daily[i].weather[0].main === "Rain"){ //nuage avec pluie
-        document.getElementById(id).src = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/271/cloud-with-rain_1f327-fe0f.png";
-    }
-    else if (response.daily[i].weather[0].main === "Clear"){ //soleil
-        document.getElementById(id).src = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/271/sun_2600-fe0f.png";
-    }
-    else if (response.daily[i].weather[0].description === "Snowy"){ //nuage avec neige
-        document.getElementById(id).src = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/271/cloud-with-snow_1f328-fe0f.png";
-    }
-    else if (response.daily[i].weather[0].description === "Stormy"){ //nuage avec éclair
-        document.getElementById(id).src = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/271/cloud-with-lightning_1f329-fe0f.png";
-    }
-}
-
-function jours(idDate,idTempsMax,idTempsMin,jours,i) {
-    let response = xhr2.response;
-    let aujourdhui = new Date();
-    document.getElementById(idDate).innerHTML =  (aujourdhui.getDate() + jours ) + "/" + aujourdhui.getMonth() + 1 + "/" + aujourdhui.getFullYear();
-    document.getElementById(idTempsMax).innerHTML += Math.round(response.daily[i].temp.max) + "°";
-    document.getElementById(idTempsMin).innerHTML += Math.round(response.daily[i].temp.min) + "°";
-}
-
 xhr.onload = function () {
     let response = xhr.response;
     document.getElementById("state").innerHTML = response.name + ", " + response.sys.country;
@@ -97,4 +64,36 @@ xhr2.onload = function () {
 }
 
 xhr2.send();
-console.log(xhr2);
+
+function imageTemps(i, id){
+    let response = xhr2.response;
+    if (response.daily[i].weather[0].main === "Cloudy"){ //soleil avec nuage
+        document.getElementById(id).src = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/271/sun-behind-cloud_26c5.png";
+    }
+    else if(response.daily[i].weather[0].main === "Clouds"){ //nuages
+        document.getElementById(id).src = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/271/cloud_2601-fe0f.png";
+    }
+    else if (response.daily[i].weather[0].main === "Fog" || response.daily[i].weather[0].main === "Haze" || response.daily[i].weather[0].main === "Mist") { //brouillard et brume
+        document.getElementById(id).src = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/271/fog_1f32b-fe0f.png";
+    }
+    else if(response.daily[i].weather[0].main === "Rain"){ //nuage avec pluie
+        document.getElementById(id).src = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/271/cloud-with-rain_1f327-fe0f.png";
+    }
+    else if (response.daily[i].weather[0].main === "Clear"){ //soleil
+        document.getElementById(id).src = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/271/sun_2600-fe0f.png";
+    }
+    else if (response.daily[i].weather[0].description === "Snowy"){ //nuage avec neige
+        document.getElementById(id).src = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/271/cloud-with-snow_1f328-fe0f.png";
+    }
+    else if (response.daily[i].weather[0].description === "Stormy"){ //nuage avec éclair
+        document.getElementById(id).src = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/271/cloud-with-lightning_1f329-fe0f.png";
+    }
+}
+
+function jours(idDate,idTempsMax,idTempsMin,jours,i) {
+    let response = xhr2.response;
+    let aujourdhui = new Date();
+    document.getElementById(idDate).innerHTML =  (aujourdhui.getDate() + jours ) + "/" + aujourdhui.getMonth() + 1 + "/" + aujourdhui.getFullYear();
+    document.getElementById(idTempsMax).innerHTML += Math.round(response.daily[i].temp.max) + "°";
+    document.getElementById(idTempsMin).innerHTML += Math.round(response.daily[i].temp.min) + "°";
+}
