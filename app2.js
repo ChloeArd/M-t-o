@@ -1,5 +1,4 @@
 let URL2 = "http://api.openweathermap.org/data/2.5/onecall?lat=49.99&lon=4.1005&lang=fr&units=metric&exclude=minutely,hourly,alerts&appid=23affb86e06c929816326e1bd76c4476";// API pour Anor, metric = celcius, prévisions 4j
-console.log(URL2);
 
 let xhr2 = new XMLHttpRequest();
 xhr2.open("GET", URL2);
@@ -122,4 +121,3 @@ xhr2.onload = function () {
 }
 
 xhr2.send();
-console.log(xhr2);

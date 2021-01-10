@@ -43,4 +43,3 @@ xhr.onload = function () {
 }
 
 xhr.send();
-console.log(xhr);
