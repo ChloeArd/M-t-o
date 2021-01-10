@@ -80,7 +80,7 @@ xhr2.open("GET", URL2);
 xhr2.responseType = "json";
 
 xhr2.onload = function () {
-    //jour 1
+    //jour 1 --> demain
     jours("date1", "tempsMax1", "tempsMin1", 1,0);
     imageTemps(0, "imageTemps1");
 
