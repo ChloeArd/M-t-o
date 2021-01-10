@@ -44,7 +44,7 @@ xhr.onload = function () {
 
 xhr.send();
 
-let URL2 = "http://api.openweathermap.org/data/2.5/onecall?lat=49.99&lon=4.1005&lang=fr&units=metric&exclude=minutely,hourly,alerts&appid=f5c382e18131ee20c243227653a7d50c";// API pour Anor, metric = celcius, prévisions 4j
+let URL2 = "https://api.openweathermap.org/data/2.5/onecall?lat=49.99&lon=4.1005&lang=fr&units=metric&exclude=minutely,hourly,alerts&appid=f5c382e18131ee20c243227653a7d50c";// API pour Anor, metric = celcius, prévisions 4j
 
 let xhr2 = new XMLHttpRequest();
 xhr2.open("GET", URL2);
