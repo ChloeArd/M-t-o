@@ -60,6 +60,7 @@ h1{
 .row{
     display: flex;
     flex-direction: row;
+    margin-bottom: 10px;
 }
 
 #tempsMax, #sunrise, #humidity{
@@ -74,4 +75,19 @@ h1{
 
 #autreInfos{
     margin-top: 30px;
+}
+
+@media screen and (max-width: 1000px) {
+    #container{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    #inputState{
+        font-size: 20px;
+    }
+    .row{
+        font-size: 20px;
+    }
 }

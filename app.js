@@ -19,25 +19,25 @@ xhr.onload = function () {
         document.getElementById("humidity").innerHTML += response.main.humidity + " %";
         document.getElementById("windSpeed").innerHTML += response.wind.speed + " m/s";
 
-        if (response.weather[0].main === "Cloudy"){ //clair
+        if (response.weather[0].main === "Cloudy"){ //soleil avec nuage
             document.getElementById("imageTemps").src = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/271/sun-behind-cloud_26c5.png";
         }
         if(response.weather[0].main === "Clouds"){ //nuages
             document.getElementById("imageTemps").src = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/271/cloud_2601-fe0f.png";
         }
-        if (response.weather[0].main === "Fog" ) { //brouillard
+        if (response.weather[0].main === "Fog" || response.weather[0].main === "Haze" || response.weather[0].main === "Mist") { //brouillard et brume
             document.getElementById("imageTemps").src = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/271/fog_1f32b-fe0f.png";
         }
-        if(response.weather[0].main === "Rain"){
+        if(response.weather[0].main === "Rain"){ //nuage avec pluie
             document.getElementById("imageTemps").src = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/271/cloud-with-rain_1f327-fe0f.png";
         }
-        if (response.weather[0].main === "Clear"){
+        if (response.weather[0].main === "Clear"){ //soleil
             document.getElementById("imageTemps").src = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/271/sun_2600-fe0f.png";
         }
-        if (response.weather[0].description === "Snowy"){
+        if (response.weather[0].description === "Snowy"){ //nuage avec neige
             document.getElementById("imageTemps").src = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/271/cloud-with-snow_1f328-fe0f.png";
         }
-        if (response.weather[0].description === "Sotrmy"){
+        if (response.weather[0].description === "Stormy"){ //nuage avec éclair
             document.getElementById("imageTemps").src = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/271/cloud-with-lightning_1f329-fe0f.png";
         }
 }
