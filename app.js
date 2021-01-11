@@ -30,7 +30,7 @@ xhr.onload = function () {
     else if (response.weather[0].main === "Clear"){ //soleil
         document.getElementById("imageTemps").src = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/271/sun_2600-fe0f.png";
     }
-    else if (response.weather[0].description === "Snowy"){ //nuage avec neige
+    else if (response.weather[0].description === "Snow"){ //nuage avec neige
         document.getElementById("imageTemps").src = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/271/cloud-with-snow_1f328-fe0f.png";
     }
     else if (response.weather[0].description === "Stormy"){ //nuage avec éclair
@@ -64,6 +64,7 @@ xhr2.onload = function () {
 }
 
 xhr2.send();
+console.log(xhr2)
 
 function imageTemps(i, id){
     let response = xhr2.response;
@@ -82,7 +83,7 @@ function imageTemps(i, id){
     else if (response.daily[i].weather[0].main === "Clear"){ //soleil
         document.getElementById(id).src = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/271/sun_2600-fe0f.png";
     }
-    else if (response.daily[i].weather[0].description === "Snowy"){ //nuage avec neige
+    else if (response.daily[i].weather[0].description === "Snow"){ //nuage avec neige
         document.getElementById(id).src = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/271/cloud-with-snow_1f328-fe0f.png";
     }
     else if (response.daily[i].weather[0].description === "Stormy"){ //nuage avec éclair
